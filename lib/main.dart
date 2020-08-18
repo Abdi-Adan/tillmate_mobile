@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tillmate/pages/drawerscreen.dart';
-import 'package:tillmate/pages/homeScreen.dart';
+import 'package:tillmate/homestack.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -18,21 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          DrawerScreen(), 
-          HomeScreen(),
-        ],
-      ),
+      home: HomeStack(),
     );
   }
 }
