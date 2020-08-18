@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tillmate/screens/admin_root.dart';
+import 'package:tillmate/pages/drawerscreen.dart';
+import 'package:tillmate/pages/homeScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,10 +14,25 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tillmate',
       theme: ThemeData(
+        fontFamily: 'Circular',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Admin(),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          DrawerScreen(), 
+          HomeScreen(),
+        ],
+      ),
     );
   }
 }
